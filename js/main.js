@@ -12,9 +12,14 @@ let talleres = 3000
 let tottenham = 5000
 
 let consulta = confirm("¿Le gustaría consultar algun precio?")
-if (consulta) {
-    precio()
-} else {
+
+while (consulta) {
+    if (consulta) {
+        precio()
+    }
+}
+
+if (consulta === false) {
     alert("De acuerdo, que tenga un buen dia!")
 }
 
