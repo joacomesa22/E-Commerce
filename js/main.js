@@ -1,63 +1,69 @@
-let argentina = 10000
-let atletico = 5000
-let barcelona = 7000
-let boca = 4000
-let chelsea = 5000
-let inter = 5000
-let liverpool = 5000
-let newells = 3000
-let psg = 7000
-let river = 4000
-let talleres = 3000
-let tottenham = 5000
+class Producto{
+    constructor(nombre, precio, tallesDisponibles){
+        this.nombre = nombre
+        this.precio = precio 
+        this.tallesDisponibles = tallesDisponibles
+    }
+}
+const camisetas = []
+camisetas.push(new Producto("Camiseta suplente Argentina 2020-21", 10000, "S, M, XL"))
+camisetas.push(new Producto("Camiseta titular Atletico de Madrid 2022-23", 5000, "XS, M, L"))
+camisetas.push(new Producto("Camiseta titular Atletico de Madrid 2021-22", 7000, "XS, S, M"))
+camisetas.push(new Producto("Camiseta titular Boca Juniors 2021-22", 4000, "XXS, S, M, XL, XXL"))
+camisetas.push(new Producto("Camiseta suplente Chelsea 2021-22", 5000, "XXS, S, XL"))
+camisetas.push(new Producto("Camiseta alternativa Inter de Milan 2021-22", 5000, "S, L"))
+camisetas.push(new Producto("Camiseta suplente Chelsea 2022-23", 5000, "XXS, S"))
+camisetas.push(new Producto("Camiseta suplente Newell's Old Boys 2021-22", 3000, "L, XL"))
+camisetas.push(new Producto("Camiseta  titular Paris Saint Germain 2022-23", 7000, "S, M"))
+camisetas.push(new Producto("Camiseta  titular River 2021-22", 4000, "XXS, L"))
+camisetas.push(new Producto("Camiseta  titular Talleres de Cordoba 2021-22", 3000, "M, L"))
+camisetas.push(new Producto("Camiseta  suplente Chelsea 2022-23", 5000, "XXS"))
 
-let consulta = confirm("¿Le gustaría consultar algun precio?")
-
-
+let consulta = confirm("¿Le gustaría obtener información acerca de alguna camiseta?")
 if (consulta) {
-    precio()
+    info()
 } else {
     alert("De acuerdo, que tenga un buen dia!")
 }
 
-function precio() {
-    let consultarPrecio = prompt("¿De qué camiseta le gustaría saber el precio?")
+function info() {
+    let consultarInfo = prompt("¿De qué camiseta le gustaría obtener información?")
 
-    if(consultarPrecio.toLocaleLowerCase() === "argentina"){
-        alert("La camiseta de Argentina cuesta " + argentina)
+    if(consultarInfo.toLocaleLowerCase() === "argentina"){
+        alert("Nombre: " + camisetas[0].nombre + "\n" + "Precio: " + camisetas[0].precio + "\n" + "Talles Disponibles: " + camisetas[0].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "atletico de madrid"){
-        alert("La camiseta del Atletico de Madrid cuesta " + atletico)
+    } else if(consultarInfo.toLocaleLowerCase() === "atletico de madrid"){
+        alert("Nombre: " + camisetas[1].nombre + "\n" + "Precio: " + camisetas[1].precio + "\n" + "Talles Disponibles: " + camisetas[1].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "barcelona"){
-        alert("La camiseta del Barcelona cuesta " + barcelona)
+    } else if(consultarInfo.toLocaleLowerCase() === "barcelona"){
+        alert("Nombre: " + camisetas[2].nombre + "\n" + "Precio: " + camisetas[2].precio + "\n" + "Talles Disponibles: " + camisetas[2].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "boca"){
-        alert("La camiseta de Boca cuesta " + boca)
+    } else if(consultarInfo.toLocaleLowerCase() === "boca"){
+        alert("Nombre: " + camisetas[3].nombre + "\n" + "Precio: " + camisetas[3].precio + "\n" + "Talles Disponibles: " + camisetas[3].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "chelsea"){
-        alert("La camiseta del Chelsea cuesta " + chelsea)
+    } else if(consultarInfo.toLocaleLowerCase() === "chelsea"){
+        alert("Nombre: " + camisetas[4].nombre + "\n" + "Precio: " + camisetas[4].precio + "\n" + "Talles Disponibles: " + camisetas[4].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "inter"){
-        alert("La camiseta del Inter cuesta " + inter)
+    } else if(consultarInfo.toLocaleLowerCase() === "inter"){
+        alert("Nombre: " + camisetas[5].nombre + "\n" + "Precio: " + camisetas[5].precio + "\n" + "Talles Disponibles: " + camisetas[5].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "liverpool"){
-        alert("La camiseta del Liverpool cuesta " + liverpool)
+    } else if(consultarInfo.toLocaleLowerCase() === "liverpool"){
+        alert("Nombre: " + camisetas[6].nombre + "\n" + "Precio: " + camisetas[6].precio + "\n" + "Talles Disponibles: " + camisetas[6].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "newells"){
-        alert("La camiseta de Newells cuesta " + newells)
+    } else if(consultarInfo.toLocaleLowerCase() === "newells"){
+        alert("Nombre: " + camisetas[7].nombre + "\n" + "Precio: " + camisetas[7].precio + "\n" + "Talles Disponibles: " + camisetas[7].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "psg"){
-        alert("La camiseta del PSG cuesta " + psg)
+    } else if(consultarInfo.toLocaleLowerCase() === "psg"){
+        alert("Nombre: " + camisetas[8].nombre + "\n" + "Precio: " + camisetas[8].precio + "\n" + "Talles Disponibles: " + camisetas[8].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "river"){
-        alert("La camiseta de River cuesta " + river)
+    } else if(consultarInfo.toLocaleLowerCase() === "river"){
+        alert("Nombre: " + camisetas[9].nombre + "\n" + "Precio: " + camisetas[9].precio + "\n" + "Talles Disponibles: " + camisetas[9].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "talleres"){
-        alert("La camiseta de Talleres cuesta " + talleres)
+    } else if(consultarInfo.toLocaleLowerCase() === "talleres"){
+        alert("Nombre: " + camisetas[10].nombre + "\n" + "Precio: " + camisetas[10].precio + "\n" + "Talles Disponibles: " + camisetas[10].tallesDisponibles)
         otraConsulta()
-    } else if(consultarPrecio.toLocaleLowerCase() === "tottenham"){
-        alert("La camiseta del Tottenham cuesta " + tottenham)
+    } else if(consultarInfo.toLocaleLowerCase() === "tottenham"){
+        alert("Nombre: " + camisetas[11].nombre + "\n" + "Precio: " + camisetas[11].precio + "\n" + "Talles Disponibles: " + camisetas[11].tallesDisponibles)
         otraConsulta()
     } else{
         alert("Lo siento, no tenemos esa camiseta")
@@ -66,9 +72,9 @@ function precio() {
 }
 
 function otraConsulta() {
-    let otroPrecio = confirm("¿Le gustaría consultar otro precio?")
-    if (otroPrecio) {
-        precio()
+    let masInfo = confirm("¿Le gustaría consultar por otra camiseta?")
+    if (masInfo) {
+        info()
     } else{
         alert("De acuerdo, gracias por consultar!")
     }
