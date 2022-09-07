@@ -4,17 +4,41 @@
     justify-content: space-around;
 }
 .cards-container{
+    @include centrado;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
 .card{
     padding: 2rem;
     width: 70%;
-    background-color: chocolate;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-.card__img img{
-    width: 100%;
+
+    &__text{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        p{
+            color: $white;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__img img{
+        width: 100%;
+        border-radius: 8px;
+        border: 2px solid $lightBlue;
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        a{
+            text-decoration: none;
+            color: $white;
+            font-size: 1.2rem;
+        }
+    }
 }

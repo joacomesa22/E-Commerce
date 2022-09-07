@@ -1,8 +1,68 @@
 header{
-    padding: 2rem 0;
+    @include centrado;
+    padding: 3rem 0;
 }
-.header-container{
+.header{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    &__logo{
+        max-width: 200px;
+        img{
+            width: 100%;
+        }
+    }
+
+    &__links{
+        width: 25%;
+        display: flex;
+        justify-content: space-around;
+
+        &-link{
+            text-decoration: none;
+            color: $white;
+            font-size: 1.3rem;
+
+            i{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+footer{
+    @include centrado;
+    padding: 6rem 0;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__logo{
+        max-width: 200px;
+        img{
+            width: 100%;
+        }
+    }
+
+    &__links{
+        display: flex;
+        justify-content: space-around;
+
+        &-link{
+            text-decoration: none;
+            color: $white;
+            font-size: 1.3rem;
+        }
+
+    }
+    &__media{
+        width: 15%;
+        display: flex;
+        justify-content: space-around;
+        i{
+            font-size: 1.5rem;
+            color: $white;
+        }
+    }
 }

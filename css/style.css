@@ -3,13 +3,61 @@
   padding: 0;
   box-sizing: border-box; }
 
-header {
-  padding: 2rem 0; }
+body {
+  background-color: #072e51;
+  background-repeat: no-repeat; }
 
-.header-container {
+header {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 3rem 0; }
+
+.header {
   display: flex;
   align-items: center;
   justify-content: space-around; }
+  .header__logo {
+    max-width: 200px; }
+    .header__logo img {
+      width: 100%; }
+  .header__links {
+    width: 25%;
+    display: flex;
+    justify-content: space-around; }
+    .header__links-link {
+      text-decoration: none;
+      color: #e6e6e6;
+      font-size: 1.3rem; }
+      .header__links-link i {
+        font-size: 1.5rem; }
+
+footer {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 6rem 0; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .footer__logo {
+    max-width: 200px; }
+    .footer__logo img {
+      width: 100%; }
+  .footer__links {
+    display: flex;
+    justify-content: space-around; }
+    .footer__links-link {
+      text-decoration: none;
+      color: #e6e6e6;
+      font-size: 1.3rem; }
+  .footer__media {
+    width: 15%;
+    display: flex;
+    justify-content: space-around; }
+    .footer__media i {
+      font-size: 1.5rem;
+      color: #e6e6e6; }
 
 .header-container {
   display: flex;
@@ -17,16 +65,34 @@ header {
   justify-content: space-around; }
 
 .cards-container {
+  margin: 0 auto;
+  max-width: 1500px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; }
 
 .card {
   padding: 2rem;
   width: 70%;
-  background-color: chocolate;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
-
-.card__img img {
-  width: 100%; }
+  .card__text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px; }
+    .card__text p {
+      color: #e6e6e6;
+      font-size: 1.2rem; }
+  .card__img img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #75aadb; }
+  .card__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; }
+    .card__button a {
+      text-decoration: none;
+      color: #e6e6e6;
+      font-size: 1.2rem; }

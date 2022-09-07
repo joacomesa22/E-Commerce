@@ -1,3 +1,4 @@
+// CONSTRUCTOR
 class Producto{
     constructor(nombre, precio, tallesDisponibles){
         this.nombre = nombre
@@ -5,20 +6,30 @@ class Producto{
         this.tallesDisponibles = tallesDisponibles
     }
 }
+// PRODUCTOS
 const camisetas = []
-camisetas.push(new Producto("Camiseta suplente Argentina 2020-21", 10000, "S, M, XL"))
-camisetas.push(new Producto("Camiseta titular Atletico de Madrid 2022-23", 5000, "XS, M, L"))
-camisetas.push(new Producto("Camiseta titular Atletico de Madrid 2021-22", 7000, "XS, S, M"))
-camisetas.push(new Producto("Camiseta titular Boca Juniors 2021-22", 4000, "XXS, S, M, XL, XXL"))
-camisetas.push(new Producto("Camiseta suplente Chelsea 2021-22", 5000, "XXS, S, XL"))
-camisetas.push(new Producto("Camiseta alternativa Inter de Milan 2021-22", 5000, "S, L"))
-camisetas.push(new Producto("Camiseta suplente Chelsea 2022-23", 5000, "XXS, S"))
-camisetas.push(new Producto("Camiseta suplente Newell's Old Boys 2021-22", 3000, "L, XL"))
-camisetas.push(new Producto("Camiseta  titular Paris Saint Germain 2022-23", 7000, "S, M"))
-camisetas.push(new Producto("Camiseta  titular River 2021-22", 4000, "XXS, L"))
-camisetas.push(new Producto("Camiseta  titular Talleres de Cordoba 2021-22", 3000, "M, L"))
-camisetas.push(new Producto("Camiseta  suplente Chelsea 2022-23", 5000, "XXS"))
+camisetas.push(new Producto("CAMISETA SUPLENTE ARGENTINA 2020-21", 10000, "S, M, XL"))
+camisetas.push(new Producto("CAMISETA TITULAR ATLETICO DE MADRID 2022-23", 5000, "XS, M, L"))
+camisetas.push(new Producto("CAMISETA TITULAR BARCELONA 2021-22", 7000, "XS, S, M"))
+camisetas.push(new Producto("CAMISETA TITULAR BOCA JUNIORS 2021-22", 4000, "XXS, S, M, XL, XXL"))
+camisetas.push(new Producto("CAMISETA SUPLENTE CHELSEA 2021-22", 5000, "XXS, S, XL"))
+camisetas.push(new Producto("CAMISETA ALTERNATIVA INTER DE MILAN 2021-22", 5000, "S, L"))
+camisetas.push(new Producto("CAMISETA SUPLENTE LIVERPOOL 2022-23", 5000, "XXS, S"))
+camisetas.push(new Producto("CAMISETA SUPLENTE NEWELL'S OLD BOYS 2021-22", 3000, "L, XL"))
+camisetas.push(new Producto("CAMISETA SUPLENTE PARIS SAINT GERMAIN 2022-23", 7000, "S, M"))
+camisetas.push(new Producto("CAMISETA TITULAR RIVER PLATE 2021-22", 4000, "XXS, L"))
+camisetas.push(new Producto("CAMISETA TITULAR TALLERES DE CORDOBA 2021-22", 3000, "M, L"))
+camisetas.push(new Producto("CAMISETA SUPLENTE TOTTENHAM 2022-23", 5000, "XXS"))
 
+// BUSCAR CAMISETAS
+function buscarCamiseta() {
+    let parametro = prompt("Ingrese el nombre de la camiseta que le interesa")
+    let resultado = camisetas.filter((camiseta) => camiseta.nombre.includes(parametro.toUpperCase()))
+    console.table(resultado);
+}
+
+
+// SIMULADOR ANTERIOR
 let consulta = confirm("¿Le gustaría obtener información acerca de alguna camiseta?")
 if (consulta) {
     info()
