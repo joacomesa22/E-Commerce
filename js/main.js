@@ -28,65 +28,17 @@ function buscarCamiseta() {
     console.table(resultado);
 }
 
+// DOM
+let padre = document.getElementById("comentarios")
+let personas = ["Homero", "Marge", "Bart", "Lisa", "Maggie"]
 
-// SIMULADOR ANTERIOR
-let consulta = confirm("¿Le gustaría obtener información acerca de alguna camiseta?")
-if (consulta) {
-    info()
-} else {
-    alert("De acuerdo, que tenga un buen dia!")
+for (const persona of personas) {
+    let li = document.createElement("li")
+    li.innerHTML = persona
+    padre.appendChild(li)
 }
 
-function info() {
-    let consultarInfo = prompt("¿De qué camiseta le gustaría obtener información?")
 
-    if(consultarInfo.toLocaleLowerCase() === "argentina"){
-        alert("Nombre: " + camisetas[0].nombre + "\n" + "Precio: " + camisetas[0].precio + "\n" + "Talles Disponibles: " + camisetas[0].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "atletico de madrid"){
-        alert("Nombre: " + camisetas[1].nombre + "\n" + "Precio: " + camisetas[1].precio + "\n" + "Talles Disponibles: " + camisetas[1].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "barcelona"){
-        alert("Nombre: " + camisetas[2].nombre + "\n" + "Precio: " + camisetas[2].precio + "\n" + "Talles Disponibles: " + camisetas[2].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "boca"){
-        alert("Nombre: " + camisetas[3].nombre + "\n" + "Precio: " + camisetas[3].precio + "\n" + "Talles Disponibles: " + camisetas[3].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "chelsea"){
-        alert("Nombre: " + camisetas[4].nombre + "\n" + "Precio: " + camisetas[4].precio + "\n" + "Talles Disponibles: " + camisetas[4].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "inter"){
-        alert("Nombre: " + camisetas[5].nombre + "\n" + "Precio: " + camisetas[5].precio + "\n" + "Talles Disponibles: " + camisetas[5].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "liverpool"){
-        alert("Nombre: " + camisetas[6].nombre + "\n" + "Precio: " + camisetas[6].precio + "\n" + "Talles Disponibles: " + camisetas[6].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "newells"){
-        alert("Nombre: " + camisetas[7].nombre + "\n" + "Precio: " + camisetas[7].precio + "\n" + "Talles Disponibles: " + camisetas[7].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "psg"){
-        alert("Nombre: " + camisetas[8].nombre + "\n" + "Precio: " + camisetas[8].precio + "\n" + "Talles Disponibles: " + camisetas[8].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "river"){
-        alert("Nombre: " + camisetas[9].nombre + "\n" + "Precio: " + camisetas[9].precio + "\n" + "Talles Disponibles: " + camisetas[9].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "talleres"){
-        alert("Nombre: " + camisetas[10].nombre + "\n" + "Precio: " + camisetas[10].precio + "\n" + "Talles Disponibles: " + camisetas[10].tallesDisponibles)
-        otraConsulta()
-    } else if(consultarInfo.toLocaleLowerCase() === "tottenham"){
-        alert("Nombre: " + camisetas[11].nombre + "\n" + "Precio: " + camisetas[11].precio + "\n" + "Talles Disponibles: " + camisetas[11].tallesDisponibles)
-        otraConsulta()
-    } else{
-        alert("Lo siento, no tenemos esa camiseta")
-        otraConsulta()
-    }
-}
 
-function otraConsulta() {
-    let masInfo = confirm("¿Le gustaría consultar por otra camiseta?")
-    if (masInfo) {
-        info()
-    } else{
-        alert("De acuerdo, gracias por consultar!")
-    }
-}
+
+
