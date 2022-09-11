@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <title>D10S - Inicio</title>
@@ -22,10 +21,20 @@
         </div>
     </header>
     <main>
-        <div id="comentarios">
-            <h1>Hola Mundo</h1>
-        </div>
-    </main>
+            <!-- PROBANDO DOM Y EVENTS -->
+            <section>
+                <div class="seccion-comentarios">
+                    <h1>Comentarios!</h1>
+                    <button id="btn-comentarios"> Añadir comentario</button>
+                    <ul id="comentarios">
+                        <li>"Muy buenas camisetas!" - Carlos Martinez</li>
+                        <li>"Excelente calidad - Romina Gonazales</li>
+                        <li>"Muy contento con mi nueva camiseta del Barcelona"!!! - Juan Perez</li>
+                        <li>"Gran servicio y las camisetas son de calidad!!" - Claudio Sanchez</li>
+                    </ul>
+                </div>
+            </section>
+            </main>
     <footer>
         <div class="footer">
             <div class="footer__logo">
@@ -42,5 +51,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

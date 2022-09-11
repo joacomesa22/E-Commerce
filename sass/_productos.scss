@@ -34,11 +34,14 @@
     &__button{
         display: flex;
         justify-content: center;
-        margin-top: 5px;
+        margin-top: 12px;
         a{
             text-decoration: none;
-            color: $white;
+            color: $darkBlue;
             font-size: 1.2rem;
+            padding: 8px 24px;
+            background: $sun;
+            border-radius: 10px;
         }
     }
 }
