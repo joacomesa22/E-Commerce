@@ -8,8 +8,12 @@ header{
     justify-content: space-around;
     &__logo{
         max-width: 200px;
+        transition: all .3s;
         img{
             width: 100%;
+        }
+        &:hover{
+            transform: scale(1.1);  
         }
     }
 
@@ -19,12 +23,28 @@ header{
         justify-content: space-around;
 
         &-link{
-            text-decoration: none;
             color: $white;
             font-size: 1.3rem;
-
+            --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            &::after{
+                content: "";
+                display: block;
+                background: $lightBlue;
+                width: 100%;
+                margin-top: 3px;
+                height: 3px;
+                clip-path: var(--clippy);
+                transition: clip-path .3s;
+            }
+            &:hover{
+                --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+            }
             i{
                 font-size: 1.5rem;
+                transition: all .3s;
+                &:hover{
+                    transform: scale(1.1)
+                }
             }
         }
     }
@@ -32,7 +52,7 @@ header{
 
 footer{
     @include centrado;
-    padding: 6rem 0;
+    padding: 3rem 0;
 }
 .footer{
     display: flex;
@@ -40,6 +60,10 @@ footer{
     justify-content: space-around;
     &__logo{
         max-width: 200px;
+        transition: all .3s;
+        &:hover{
+            transform: scale(1.1);
+        }
         img{
             width: 100%;
         }
@@ -50,9 +74,22 @@ footer{
         justify-content: space-around;
 
         &-link{
-            text-decoration: none;
             color: $white;
             font-size: 1.3rem;
+            --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            &::after{
+                content: "";
+                display: block;
+                background: $lightBlue;
+                width: 100%;
+                margin-top: 3px;
+                height: 3px;
+                clip-path: var(--clippy);
+                transition: clip-path .3s;
+            }
+            &:hover{
+                --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+            }
         }
 
     }
@@ -61,8 +98,12 @@ footer{
         display: flex;
         justify-content: space-around;
         i{
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: $white;
+            transition: all .3s;
+            &:hover{
+                transform: scale(1.3);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 @mixin centrado {
     margin: 0 auto;
     max-width: 1500px;
+    padding: 6rem 0;
 }
 
 // Colores
@@ -9,3 +10,4 @@ $white: rgb(230, 230, 230);
 $lightBlue: rgb(117,170,219);
 $darkBlue: rgb(7,46,81);
 $sun: rgb(252,191,69);
+
