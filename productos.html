@@ -19,11 +19,12 @@
             </div>
             <nav class="header__links">
                 <a href="productos.html" class="header__links-link">Catálogo</a>
-                <a href="#" class="header__links-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                <button id="abrir-carrito" class="header__links-cart"><i class="fa-solid fa-cart-shopping header__links-cart-icon"></i><span id="contador-carrito" class="header__links-cart-contador">0</span></button>
             </nav>
+            <button id="vaciar-carrito" class="cart__vaciar">Vaciar Carrito</button>
+            <p class="cart__total">$<span id="precio-total">0</span></p>
         </div>
-        <div id="cart">
-           
+        <div id="cart-id" class="cart">
         </div>
     </header>
     <main>

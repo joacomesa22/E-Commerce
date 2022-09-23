@@ -34,9 +34,9 @@ header {
     .header__logo:hover {
       transform: scale(1.1); }
   .header__links {
-    width: 25%;
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    gap: 3rem; }
     .header__links-link {
       color: #e6e6e6;
       font-size: 1.3rem;
@@ -52,11 +52,27 @@ header {
         transition: clip-path .3s; }
       .header__links-link:hover {
         --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%); }
-      .header__links-link i {
+    .header__links-cart {
+      background: transparent;
+      border: none; }
+      .header__links-cart-icon {
+        color: #e6e6e6;
         font-size: 1.5rem;
         transition: all .3s; }
-        .header__links-link i:hover {
+        .header__links-cart-icon:hover {
           transform: scale(1.1); }
+      .header__links-cart-contador {
+        color: #e6e6e6; }
+  .header .cart__vaciar {
+    background: transparent;
+    color: #e6e6e6;
+    border: 2px solid #75aadb;
+    padding: 4px 8px; }
+  .header .cart__total {
+    background: transparent;
+    color: #e6e6e6;
+    border: 2px solid #75aadb;
+    padding: 4px 8px; }
 
 footer {
   margin: 0 auto;
@@ -234,10 +250,9 @@ li {
   width: 400px;
   border: 2px solid #75aadb;
   background: #e6e6e6; }
-  .cart h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem; }
-  .cart__item {
+  .cart p {
+    font-size: 0.8rem; }
+  .cart__product {
     width: 100%;
     display: flex;
     justify-content: center;

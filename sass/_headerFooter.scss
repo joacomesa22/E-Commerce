@@ -11,6 +11,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     &__logo{
         max-width: 200px;
         transition: all .3s;
@@ -23,10 +24,10 @@ header{
     }
 
     &__links{
-        width: 25%;
         display: flex;
         justify-content: space-around;
-
+        gap: 3rem;
+        
         &-link{
             color: $white;
             font-size: 1.3rem;
@@ -44,14 +45,36 @@ header{
             &:hover{
                 --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
             }
-            i{
+        }
+
+        &-cart{
+            background: transparent;
+            border: none;
+            &-icon{
+                color: $white;
                 font-size: 1.5rem;
                 transition: all .3s;
                 &:hover{
                     transform: scale(1.1)
                 }
             }
+            &-contador{
+                color: $white
+            }
         }
+    }
+
+    .cart__vaciar{
+        background: transparent;
+        color: $white;
+        border: 2px solid $lightBlue;
+        padding: 4px 8px
+    }
+    .cart__total{
+        background: transparent;
+        color: $white;
+        border: 2px solid $lightBlue;
+        padding: 4px 8px
     }
 }
 
