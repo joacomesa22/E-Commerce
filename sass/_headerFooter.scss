@@ -1,11 +1,16 @@
 header{
     @include centrado;
     padding: 3rem 0;
+    position: sticky;
+    top: 0;
+    background: $darkBlue;
+    border-bottom: 2px solid $lightBlue;
+    z-index: 999;
 }
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     &__logo{
         max-width: 200px;
         transition: all .3s;

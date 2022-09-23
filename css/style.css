@@ -14,14 +14,18 @@ body {
 
 header {
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0;
-  padding: 3rem 0; }
+  max-width: 1400px;
+  padding: 3rem 0;
+  position: sticky;
+  top: 0;
+  background: #072e51;
+  border-bottom: 2px solid #75aadb;
+  z-index: 999; }
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .header__logo {
     max-width: 200px;
     transition: all .3s; }
@@ -56,8 +60,7 @@ header {
 
 footer {
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0;
+  max-width: 1400px;
   padding: 3rem 0; }
 
 .footer {
@@ -106,8 +109,7 @@ footer {
   gap: 2.5rem;
   align-items: center;
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0; }
+  max-width: 1400px; }
   .hero__img {
     justify-self: left; }
     .hero__img img {
@@ -137,8 +139,7 @@ footer {
 
 .camisetas {
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: center; }
@@ -170,8 +171,7 @@ footer {
 
 .seccion-comentarios {
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0;
+  max-width: 1400px;
   color: #fff;
   text-align: center; }
 
@@ -183,22 +183,16 @@ footer {
 li {
   padding: 10px 0; }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around; }
-
 .cards-container {
   margin: 0 auto;
-  max-width: 1500px;
-  padding: 6rem 0;
+  max-width: 1400px;
+  padding: 6rem 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, auto));
-  justify-items: center; }
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 5rem; }
 
 .card {
-  padding: 4rem 0;
-  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around; }
@@ -207,8 +201,7 @@ li {
     justify-content: space-between;
     margin-top: 5px; }
     .card__text p {
-      color: #e6e6e6;
-      font-size: 1.2rem; }
+      color: #e6e6e6; }
   .card__img img {
     width: 100%;
     border-radius: 8px;
@@ -216,17 +209,36 @@ li {
   .card__button {
     display: flex;
     justify-content: center;
-    margin-top: 12px; }
-    .card__button a {
+    margin-top: 1rem; }
+    .card__button button {
       color: #072e51;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       padding: 8px 16px;
       background: #75aadb;
       border-radius: 10px;
       position: absolute;
-      transition: all .3s; }
-      .card__button a:hover {
+      transition: all .3s;
+      border: none;
+      cursor: pointer; }
+      .card__button button:hover {
         background: #072e51;
         color: #75aadb;
         border: 2px solid #75aadb;
         transform: scale(1.1); }
+
+.cart {
+  position: fixed;
+  top: 9.6rem;
+  right: 0;
+  min-height: 100vh;
+  width: 400px;
+  border: 2px solid #75aadb;
+  background: #e6e6e6; }
+  .cart h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem; }
+  .cart__item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; }
