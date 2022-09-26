@@ -10,17 +10,13 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  background-color: #072e51; }
+  background: radial-gradient(#072e51, #101020); }
 
 header {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 3rem 0;
-  position: sticky;
-  top: 0;
-  background: #072e51;
-  border-bottom: 2px solid #75aadb;
-  z-index: 999; }
+  padding: 3rem 2rem;
+  border-bottom: 2px solid #75aadb; }
 
 .header {
   display: flex;
@@ -36,6 +32,7 @@ header {
   .header__links {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 3rem; }
     .header__links-link {
       color: #e6e6e6;
@@ -74,15 +71,14 @@ header {
     border: 2px solid #75aadb;
     padding: 4px 8px; }
 
-footer {
-  margin: 0 auto;
-  max-width: 1400px;
-  padding: 3rem 0; }
-
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 4rem 2rem;
+  border-top: 2px solid #75aadb; }
   .footer__logo {
     max-width: 200px;
     transition: all .3s; }
@@ -125,55 +121,55 @@ footer {
   gap: 2.5rem;
   align-items: center;
   margin: 0 auto;
-  max-width: 1400px; }
+  max-width: 1400px;
+  padding: 4rem 2rem; }
   .hero__img {
     justify-self: left; }
     .hero__img img {
-      max-width: 500px; }
+      width: 100%; }
   .hero__texto {
     justify-self: right;
-    max-width: 65%; }
-    .hero__texto-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem; }
-      .hero__texto-container h1 {
-        font-size: 4rem;
-        color: #e6e6e6; }
-      .hero__texto-container a {
-        color: #072e51;
-        font-size: 1.2rem;
-        padding: 8px 24px;
-        background: #75aadb;
-        border-radius: 10px;
-        transition: all .3s; }
-        .hero__texto-container a:hover {
-          background: #072e51;
-          color: #75aadb;
-          border: 2px solid #75aadb; }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem; }
+    .hero__texto h1 {
+      font-size: 3.5rem;
+      color: #e6e6e6; }
+    .hero__texto a {
+      color: #072e51;
+      font-size: 1.2rem;
+      padding: 8px 24px;
+      background: #75aadb;
+      border-radius: 10px;
+      transition: all .3s; }
+      .hero__texto a:hover {
+        background: radial-gradient(#072e51, #101020);
+        color: #75aadb;
+        border: 2px solid #75aadb; }
 
 .camisetas {
   margin: 0 auto;
   max-width: 1400px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  padding: 4rem 2rem;
+  overflow: hidden; }
   .camisetas h1 {
     font-size: 3rem;
-    color: #e6e6e6; }
+    color: #e6e6e6;
+    margin-bottom: 2.5rem; }
   .camisetas__img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 24px; }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; }
     .camisetas__img img {
       border-radius: 8px;
-      border: 2px solid #75aadb; }
+      border: 2px solid #75aadb;
+      width: 100%; }
   .camisetas a {
-    margin-top: 24px;
+    margin-top: 2rem;
     color: #072e51;
     font-size: 1.2rem;
     padding: 8px 24px;
@@ -181,23 +177,9 @@ footer {
     border-radius: 10px;
     transition: all .3s; }
     .camisetas a:hover {
-      background: #072e51;
+      background: radial-gradient(#072e51, #101020);
       color: #75aadb;
       border: 2px solid #75aadb; }
-
-.seccion-comentarios {
-  margin: 0 auto;
-  max-width: 1400px;
-  color: #fff;
-  text-align: center; }
-
-.seccion-comentarios button {
-  padding: 8px 12px;
-  margin: 20px 0;
-  cursor: pointer; }
-
-li {
-  padding: 10px 0; }
 
 .cards-container {
   margin: 0 auto;
@@ -227,7 +209,7 @@ li {
     justify-content: center;
     margin-top: 1rem; }
     .card__button button {
-      color: #072e51;
+      color: radial-gradient(#072e51, #101020);
       font-size: 1.1rem;
       padding: 8px 16px;
       background: #75aadb;
@@ -237,19 +219,20 @@ li {
       border: none;
       cursor: pointer; }
       .card__button button:hover {
-        background: #072e51;
+        background: radial-gradient(#072e51, #101020);
         color: #75aadb;
         border: 2px solid #75aadb;
         transform: scale(1.1); }
 
 .cart {
   position: fixed;
-  top: 9.6rem;
+  top: 9.7rem;
   right: 0;
   min-height: 100vh;
   width: 400px;
   border: 2px solid #75aadb;
-  background: #e6e6e6; }
+  background: #e6e6e6;
+  z-index: 999; }
   .cart p {
     font-size: 0.8rem; }
   .cart__product {
@@ -257,3 +240,39 @@ li {
     display: flex;
     justify-content: center;
     gap: 2rem; }
+
+@media screen and (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem; }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 4rem; }
+    .hero__texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      text-align: center; }
+      .hero__texto h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0; }
+      .hero__texto a {
+        font-size: 1rem; }
+    .hero__img {
+      justify-self: center;
+      width: 90%; }
+  .camisetas {
+    text-align: center;
+    gap: 2rem; }
+    .camisetas__img {
+      grid-template-columns: 1fr;
+      gap: 5rem; }
+  .footer {
+    flex-direction: column;
+    gap: 2rem; }
+    .footer__media {
+      gap: 1rem; }
+  .cards-container {
+    grid-template-columns: 1fr; } }

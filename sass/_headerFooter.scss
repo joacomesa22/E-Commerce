@@ -1,11 +1,7 @@
 header{
     @include centrado;
-    padding: 3rem 0;
-    position: sticky;
-    top: 0;
-    background: $darkBlue;
+    padding: 3rem 2rem;
     border-bottom: 2px solid $lightBlue;
-    z-index: 999;
 }
 .header{
     display: flex;
@@ -26,6 +22,7 @@ header{
     &__links{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         gap: 3rem;
         
         &-link{
@@ -78,14 +75,14 @@ header{
     }
 }
 
-footer{
-    @include centrado;
-    padding: 3rem 0;
-}
+
 .footer{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @include centrado;
+    padding: 4rem 2rem;
+    border-top: 2px solid $lightBlue;
     &__logo{
         max-width: 200px;
         transition: all .3s;

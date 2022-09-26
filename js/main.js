@@ -153,12 +153,11 @@ camisetas.forEach((camiseta) => {
 // Agregar al carrito
 const agregarAlCarrito = (camiId) => {
     const existe = carrito.some(cami => cami.id === camiId)
-
+    
     if (existe) {
-        const cami = carrito.map (cami => {
-            if (cami.id === camiId) {
-                cami.cantidad++
-            }
+        carrito.map (cami => {
+            // Operador Lógico AND
+            cami.id === camiId && cami.cantidad++
         })
     } else {
         const item = camisetas.find((cami) => cami.id === camiId)

@@ -5,36 +5,37 @@
     gap: 2.5rem;
     align-items: center;
     @include centrado;
+    padding: 4rem 2rem;
+
     &__img{
         justify-self: left;
+
         img{
-            max-width: 500px;
+            width: 100%;
         }
     }
     &__texto{
         justify-self: right;
-        max-width: 65%;
-        &-container{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            h1{
-                font-size: 4rem;
-                color: $white;
-            }
-            a{
-                color: $darkBlue;
-                font-size: 1.2rem;
-                padding: 8px 24px;
-                background: $lightBlue;
-                border-radius: 10px;
-                transition: all .3s;
-                &:hover{
-                    background: $darkBlue;
-                    color: $lightBlue;
-                    border: 2px solid $lightBlue;
-                }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        h1{
+            font-size: 3.5rem;
+            color: $white;
+        }
+        a{
+            color: $darkBlue;
+            font-size: 1.2rem;
+            padding: 8px 24px;
+            background: $lightBlue;
+            border-radius: 10px;
+            transition: all .3s;
+            &:hover{
+                background: $gradient;
+                color: $lightBlue;
+                border: 2px solid $lightBlue;
             }
         }
     }
@@ -46,25 +47,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+
     h1{
         font-size: 3rem;
         color: $white;
+        margin-bottom: 2.5rem;
     }
 
     &__img{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
-        margin-top: 24px;
+
         img{
             border-radius: 8px;
             border: 2px solid $lightBlue;
+            width: 100%
         }
     }
     a{
-        margin-top: 24px;
+        margin-top: 2rem;
         color: $darkBlue;
         font-size: 1.2rem;
         padding: 8px 24px;
@@ -72,30 +76,9 @@
         border-radius: 10px;   
         transition: all .3s;
         &:hover{
-            background: $darkBlue;
+            background: $gradient;
             color: $lightBlue;
             border: 2px solid $lightBlue;
         }
     }
 }
-
-
-
-
-// DOM
-.seccion-comentarios{
-    @include centrado;
-    color: #fff;
-    text-align: center;
-}
-.seccion-comentarios{
-    button{
-        padding: 8px 12px;
-        margin: 20px 0;
-        cursor: pointer;
-    }
-}
-li{
-    padding: 10px 0;  
-}
-
