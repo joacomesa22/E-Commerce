@@ -86,6 +86,9 @@ const camisetas = [
     }
 ]
 
+// Desestructuración
+const [argentina, atletico, barcelona, boca, chelsea, inter, liverpool, newells, paris, river, talleres, tottenham] = camisetas
+
 
 // Contenedor de las cards
 let container = document.querySelector("#container");
@@ -115,13 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // Vaciar Carrito
-btnVaciarCarrito.addEventListener("click",() => {
+btnVaciarCarrito.addEventListener("click", () => {
     carrito.length = 0
     actualizarCarrito()
 
     // Limpiar LocalStorage
     localStorage.removeItem("carrito")
-})
+})  
 
 
 // Carga de las cards (HTML) de las camisetas 
