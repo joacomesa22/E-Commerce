@@ -50,10 +50,7 @@ const alertaVaciar = () => {
         cancelButtonText: "Cancelar",
         background: "rgb(230, 230, 230)",
         color: "rgb(7,46,81)",
-        iconColor: "red",
-        customClass: {
-            popup: "alert-border"
-        }
+        iconColor: "red"
       }).then((result) => {
         if (result.isConfirmed) {
             carrito.length = 0
@@ -77,10 +74,7 @@ btnFinalizarCompra.addEventListener("click", () => {
         cancelButtonText: "Cancelar",
         background: "rgb(230, 230, 230)",
         color: "rgb(7,46,81)",
-        iconColor: "rgb(117,170,219)",
-        customClass: {
-            popup: "alert-border"
-        }
+        iconColor: "rgb(117,170,219)"
       }).then((result) => {
         if (result.isConfirmed) {
             if (carrito.length != 0) {
@@ -109,11 +103,7 @@ const alertaCompra = () => {
         confirmButtonText: "Volver",
         confirmButtonColor: "#072e51",
         background: "rgb(230, 230, 230)",
-        color: "rgb(7,46,81)",
-        customClass: {
-            popup: "alert-border",
-            image: "alert-border"
-        }
+        color: "rgb(7,46,81)"
     })
 }
 
@@ -127,10 +117,7 @@ const alertErrorCompra = () => {
         confirmButtonColor: "#072e51",
         background: "rgb(230, 230, 230)",
         color: "rgb(7,46,81)",
-        iconColor: "red",
-        customClass: {
-            popup: "alert-border",
-        }
+        iconColor: "red"
       })
 }
 
@@ -196,10 +183,7 @@ const alertaAgregarAlCarrito = () => {
         title: 'Agregado al carrito',
         background: "rgb(230, 230, 230)",
         color: "rgb(7,46,81)",
-        iconColor: "green",
-        customClass: {
-            popup: "alert-border",
-        }
+        iconColor: "green"
     })
 }
 
