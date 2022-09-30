@@ -1,0 +1,90 @@
+const camisetas = [
+    {
+        id: 1,
+        nombre: "SUPLENTE ARGENTINA 2020-21",
+        precio: 10000,
+        imagen: "img/argentina.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 2,
+        nombre: "TITULAR ATLETICO DE MADRID 2022-23",
+        precio: 5000,
+        imagen: "img/atletico-m.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 3,
+        nombre: "TITULAR BARCELONA 2021-22",
+        precio: 7000,
+        imagen: "img/barcelona.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 4,
+        nombre: "TITULAR BOCA JUNIORS 2021-22",
+        precio: 4000,
+        imagen: "img/boca.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 5,
+        nombre: "SUPLENTE CHELSEA 2021-22",
+        precio: 5000,
+        imagen: "img/chelsea.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 6,
+        nombre: "ALTERNATIVA INTER DE MILAN 2021-22",
+        precio: 5000,
+        imagen: "img/inter.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 7,
+        nombre: "SUPLENTE LIVERPOOL 2022-23",
+        precio: 5000,
+        imagen: "img/liverpool.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 8,
+        nombre: "SUPLENTE NEWELL'S OLD BOYS 2021-22",
+        precio: 3000,
+        imagen: "img/newells.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 9,
+        nombre: "SUPLENTE PARIS SAINT GERMAIN 2022-23",
+        precio: 7000,
+        imagen: "img/psg.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 10,
+        nombre: "TITULAR RIVER PLATE 2021-22",
+        precio: 4000,
+        imagen: "img/river.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 11,
+        nombre: "TITULAR TALLERES DE CORDOBA 2021-22",
+        precio: 3000,
+        imagen: "img/talleres.jpeg",
+        cantidad: 1
+    },
+    {
+        id: 12,
+        nombre: "TITULAR TOTTENHAM 2022-23",
+        precio: 5000,
+        imagen: "img/tottenham.jpeg",
+        cantidad: 1
+
+    }
+]
+
+// Desestructuración
+const [argentina, atletico, barcelona, boca, chelsea, inter, liverpool, newells, paris, river, talleres, tottenham] = camisetas

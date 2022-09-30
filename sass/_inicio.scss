@@ -32,6 +32,7 @@
             background: $lightBlue;
             border-radius: 10px;
             transition: all .3s;
+            border: 2px solid $lightBlue;
             &:hover{
                 background: $gradient;
                 color: $lightBlue;
@@ -75,6 +76,7 @@
         background: $lightBlue;
         border-radius: 10px;   
         transition: all .3s;
+        border: 2px solid $lightBlue;   
         &:hover{
             background: $gradient;
             color: $lightBlue;

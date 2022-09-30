@@ -12,6 +12,9 @@ html {
 body {
   background: radial-gradient(#072e51, #101020); }
 
+.alert-border {
+  border: 2px solid #072e51; }
+
 header {
   margin: 0 auto;
   max-width: 1400px;
@@ -64,12 +67,19 @@ header {
     background: transparent;
     color: #e6e6e6;
     border: 2px solid #75aadb;
-    padding: 4px 8px; }
+    padding: 4px 8px;
+    cursor: pointer; }
   .header .cart__total {
     background: transparent;
     color: #e6e6e6;
     border: 2px solid #75aadb;
     padding: 4px 8px; }
+  .header .cart__comprar {
+    background: transparent;
+    color: #e6e6e6;
+    border: 2px solid #75aadb;
+    padding: 4px 8px;
+    cursor: pointer; }
 
 .footer {
   display: flex;
@@ -142,7 +152,8 @@ header {
       padding: 8px 24px;
       background: #75aadb;
       border-radius: 10px;
-      transition: all .3s; }
+      transition: all .3s;
+      border: 2px solid #75aadb; }
       .hero__texto a:hover {
         background: radial-gradient(#072e51, #101020);
         color: #75aadb;
@@ -175,7 +186,8 @@ header {
     padding: 8px 24px;
     background: #75aadb;
     border-radius: 10px;
-    transition: all .3s; }
+    transition: all .3s;
+    border: 2px solid #75aadb; }
     .camisetas a:hover {
       background: radial-gradient(#072e51, #101020);
       color: #75aadb;
