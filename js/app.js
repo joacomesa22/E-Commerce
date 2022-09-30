@@ -7,8 +7,14 @@
 // Contenedor de las cards
 let container = document.querySelector("#container");
 
+// Carrito
+const carritoProduductos = document.querySelector(".cart")
+
 // Contenedor del carrito
 const carritoContainer = document.querySelector("#cart-id")
+
+// Icono Carrito
+const cartIcon = document.querySelector("#abrir-carrito")
 
 // Boton Vaciar Carrito
 const btnVaciarCarrito = document.querySelector("#vaciar-carrito")
@@ -40,7 +46,7 @@ btnVaciarCarrito.addEventListener("click", () => {
 // Sweet Alert -> Vaciar Carrito
 const alertaVaciar = () => {
     Swal.fire({
-        title: '¿Estás seguro?',
+        title: '¿Está seguro?',
         text: "Se perderan los productos guardados en el carrito.",
         icon: 'warning',
         showCancelButton: true,
@@ -62,10 +68,17 @@ const alertaVaciar = () => {
     })
 }
 
+
+// Abrir carrito
+cartIcon.addEventListener("click", () => {
+    carritoProduductos.classList.toggle("active")
+})
+
+
 // Finalizar Compra
 btnFinalizarCompra.addEventListener("click", () => {
     Swal.fire({
-        title: '¿Estás seguro que desea finalizar la compra?',
+        title: '¿Está seguro que desea finalizar la compra?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#072e51',
