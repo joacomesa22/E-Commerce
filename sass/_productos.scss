@@ -50,3 +50,47 @@
     }
 }
 
+// Loader
+.cart-productos{
+   position: relative;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: $lightBlue;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@keyframes rotation {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+// Error
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    padding: 2rem;
+    grid-column: 2;
+    border: 2px solid $lightBlue;
+    &__img {
+        img{
+            width: 100%;
+            border: 2px solid $lightBlue;
+        }
+    }
+}

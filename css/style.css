@@ -272,6 +272,40 @@ header {
         border: 2px solid #75aadb;
         transform: scale(1.1); }
 
+.cart-productos {
+  position: relative; }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #75aadb;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e6e6e6;
+  padding: 2rem;
+  grid-column: 2;
+  border: 2px solid #75aadb; }
+  .error__img img {
+    width: 100%;
+    border: 2px solid #75aadb; }
+
 @media screen and (max-width: 800px) {
   .header {
     flex-direction: column;

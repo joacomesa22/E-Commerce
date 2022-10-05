@@ -1,14 +1,8 @@
-// const loading = () => `<img src="img/Rolling-1s-200px.gif" width="40px">`
-
-// setTimeout(() => {
-   // Realizar compra ... 
-// }, timeout);
-
 // Contenedor de las cards
 let container = document.querySelector("#container");
 
 // Carrito
-const carritoProduductos = document.querySelector(".cart")
+const carritoProductos = document.querySelector(".cart")
 
 // Contenedor del carrito
 const carritoContainer = document.querySelector("#cart-id")
@@ -19,6 +13,7 @@ const cartIcon = document.querySelector("#abrir-carrito")
 // Boton Vaciar Carrito
 const btnVaciarCarrito = document.querySelector("#vaciar-carrito")
 
+// Boton Finalizar Compra
 const btnFinalizarCompra = document.querySelector("#comprar-carrito")
 
 // Contador de productos en el carrito
@@ -71,7 +66,7 @@ const alertaVaciar = () => {
 
 // Abrir carrito
 cartIcon.addEventListener("click", () => {
-    carritoProduductos.classList.toggle("active")
+    carritoProductos.classList.toggle("active")
 })
 
 
@@ -92,17 +87,25 @@ btnFinalizarCompra.addEventListener("click", () => {
         if (result.isConfirmed) {
             if (carrito.length != 0) {
                 carrito.length = 0
-                actualizarCarrito()
-                
+                carritoContainer.innerHTML = loading()
+                setTimeout(() => {
+                    alertaCompra()
+                    actualizarCarrito()
+                }, 3000);
+
                 // Limpiar LocalStorage
                 localStorage.removeItem("carrito")
-                alertaCompra()
             } else{
                 alertErrorCompra()
             }
         }
     })
-})  
+}) 
+
+// Loader
+const loading = () => {
+    return `<span class="loader"></span>`
+}
 
 // Sweet Alert -> Finalizar Compra
 const alertaCompra = () => {
@@ -134,31 +137,53 @@ const alertErrorCompra = () => {
       })
 }
 
-// Carga de las cards (HTML) de las camisetas 
-camisetas.forEach((camiseta) => { 
-    let div = document.createElement("div")
-    div.setAttribute("class", "card")
-    div.innerHTML = `
-                    <div class="card__img">
-                        <img src="${camiseta.imagen}" alt="camiseta">
-                    </div>
-                    <div class="card__text">
-                        <p>${camiseta.nombre}</p>
-                        <p>$${camiseta.precio}</p>
-                    </div>
-                    <div class="card__button">
-                        <button href="#" class = "btn-carrito" id = "add${camiseta.id}"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
-                    `
-    container.appendChild(div)
+// Carga de las cards (HTML) de las camisetas
+const URL = "../bbdd/stock.json"
+const cargarCards = async () => {
+    try {
+        const response = await fetch(URL)
+        const data = await response.json()
+        camisetas = data
+        camisetas.forEach((camiseta) => { 
+            let div = document.createElement("div")
+            div.setAttribute("class", "card")
+            div.innerHTML = `
+                            <div class="card__img">
+                                <img src="${camiseta.imagen}" alt="camiseta">
+                            </div>
+                            <div class="card__text">
+                                <p>${camiseta.nombre}</p>
+                                <p>$${camiseta.precio}</p>
+                            </div>
+                            <div class="card__button">
+                                <button href="#" class = "btn-carrito" id = "add${camiseta.id}"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                            `
+            container.appendChild(div)
+        
+            // Boton para agregar al carrito
+            const btn = document.getElementById(`add${camiseta.id}`)
+            btn.addEventListener("click", () => {
+                agregarAlCarrito(camiseta.id)
+            })
+        }) 
 
-    // Boton para agregar al carrito
-    const btn = document.getElementById(`add${camiseta.id}`)
-    btn.addEventListener("click", () => {
-        agregarAlCarrito(camiseta.id)
-    })
-}) 
-    
+    } catch (error) {
+        container.innerHTML = mostrarError()
+    } 
+}
+cargarCards()
+
+// Error
+const mostrarError = () => {
+    return ` <div class="error">
+                <div class="error__img">
+                    <img src="img/scalo.jpeg">
+                </div>
+                <h2 class="error__title">¡NOOOO FABBIANI!</h2>
+                <p class="error__text">No pudimos cargar las camisetas</p>
+            </div>`
+}
 
 // Agregar al carrito
 const agregarAlCarrito = (camiId) => {
