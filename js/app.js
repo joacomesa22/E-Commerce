@@ -180,7 +180,7 @@ const mostrarError = () => {
                 <div class="error__img">
                     <img src="img/scalo.jpeg">
                 </div>
-                <h2 class="error__title">¡NOOOO FABBIANI!</h2>
+                <h2 class="error__title">¡NOOOOOOO!</h2>
                 <p class="error__text">No pudimos cargar las camisetas</p>
             </div>`
 }
