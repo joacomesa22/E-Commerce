@@ -23,14 +23,21 @@
             </nav>
         </div>
         <div class="cart">
-            <div class="cart__botones">
-                <button id="vaciar-carrito" class="cart__botones-vaciar">Vaciar Carrito</button>
-                <button id="comprar-carrito" class="cart__botones-comprar">Finalizar Compra</button>
-                <p class="cart__botones-total">$<span id="precio-total">0</span></p>
-            </div>
+            <i class="fa-solid fa-x cart__close" id="close-cart"></i>
+
+            <h1 class="cart__title">Carrito</h1>
+
             <div id="cart-id" class="cart-productos">
 
             </div>
+            
+            <div class="cart__buttons">
+                <button id="vaciar-carrito" class="cart__buttons-vaciar">Vaciar Carrito</button>
+
+                <p class="cart__buttons-total">Total: $<span id="precio-total">0</span></p>
+            </div>
+
+            <button id="comprar-carrito" class="cart__comprar">Finalizar Compra</button>
         </div>
     </header>
     <main>
@@ -54,7 +61,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/stock.js"></script>
+    <script  src="js/dom.js"></script>
     <script  defer src="js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

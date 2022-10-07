@@ -1,142 +1,3 @@
-// Contenedor de las cards
-let container = document.querySelector("#container");
-
-// Carrito
-const carritoProductos = document.querySelector(".cart")
-
-// Contenedor del carrito
-const carritoContainer = document.querySelector("#cart-id")
-
-// Icono Carrito
-const cartIcon = document.querySelector("#abrir-carrito")
-
-// Boton Vaciar Carrito
-const btnVaciarCarrito = document.querySelector("#vaciar-carrito")
-
-// Boton Finalizar Compra
-const btnFinalizarCompra = document.querySelector("#comprar-carrito")
-
-// Contador de productos en el carrito
-const contadorCarrito = document.querySelector("#contador-carrito")
-
-// Precio total del carrito
-const precioTotal = document.querySelector("#precio-total")
-
-// Array del carrito donde se iran almacenando las camisetas agregadas
-let carrito = []
-
-// Local Storage
-document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("carrito")) {
-        carrito = JSON.parse(localStorage.getItem("carrito"))
-        actualizarCarrito()
-    }
-})
-
-// Vaciar Carrito
-btnVaciarCarrito.addEventListener("click", () => {
-    alertaVaciar()
-})  
-
-// Sweet Alert -> Vaciar Carrito
-const alertaVaciar = () => {
-    Swal.fire({
-        title: '¿Está seguro?',
-        text: "Se perderan los productos guardados en el carrito.",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#072e51',
-        cancelButtonColor: '#A52502',
-        confirmButtonText: 'Vaciar',
-        cancelButtonText: "Cancelar",
-        background: "rgb(230, 230, 230)",
-        color: "rgb(7,46,81)",
-        iconColor: "red"
-      }).then((result) => {
-        if (result.isConfirmed) {
-            carrito.length = 0
-            actualizarCarrito()
-            
-            // Limpiar Loca-borderlStorage
-            localStorage.removeItem("carrito")
-        }
-    })
-}
-
-
-// Abrir carrito
-cartIcon.addEventListener("click", () => {
-    carritoProductos.classList.toggle("active")
-})
-
-
-// Finalizar Compra
-btnFinalizarCompra.addEventListener("click", () => {
-    Swal.fire({
-        title: '¿Está seguro que desea finalizar la compra?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#072e51',
-        cancelButtonColor: '#A52502',
-        confirmButtonText: 'Finalizar',
-        cancelButtonText: "Cancelar",
-        background: "rgb(230, 230, 230)",
-        color: "rgb(7,46,81)",
-        iconColor: "rgb(117,170,219)"
-      }).then((result) => {
-        if (result.isConfirmed) {
-            if (carrito.length != 0) {
-                carrito.length = 0
-                carritoContainer.innerHTML = loading()
-                setTimeout(() => {
-                    alertaCompra()
-                    actualizarCarrito()
-                }, 3000);
-
-                // Limpiar LocalStorage
-                localStorage.removeItem("carrito")
-            } else{
-                alertErrorCompra()
-            }
-        }
-    })
-}) 
-
-// Loader
-const loading = () => {
-    return `<span class="loader"></span>`
-}
-
-// Sweet Alert -> Finalizar Compra
-const alertaCompra = () => {
-    Swal.fire({
-        title: 'Golazo!',
-        text: 'Su compra fue realizada con éxito.',
-        imageUrl: 'img/diegol.gif',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Maradona gritando gol',
-        confirmButtonText: "Volver",
-        confirmButtonColor: "#072e51",
-        background: "rgb(230, 230, 230)",
-        color: "rgb(7,46,81)"
-    })
-}
-
-// Sweet Alert -> Error al finalizar Compra
-const alertErrorCompra = () => {
-    Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'No tiene productos cargados en el carrito',
-        confirmButtonText: "Volver",
-        confirmButtonColor: "#072e51",
-        background: "rgb(230, 230, 230)",
-        color: "rgb(7,46,81)",
-        iconColor: "red"
-      })
-}
-
 // Carga de las cards (HTML) de las camisetas
 const URL = "../bbdd/stock.json"
 const cargarCards = async () => {
@@ -180,10 +41,20 @@ const mostrarError = () => {
                 <div class="error__img">
                     <img src="img/scalo.jpeg">
                 </div>
-                <h2 class="error__title">¡NOOOOOOO!</h2>
+                <h2 class="error__title">¡NOOOOO!</h2>
                 <p class="error__text">No pudimos cargar las camisetas</p>
             </div>`
 }
+
+// Abrir carrito
+cartIcon.addEventListener("click", () => {
+    carritoProductos.classList.toggle("active")
+})
+
+// Cerrar carrito
+closeCart.addEventListener("click", () => {
+    carritoProductos.classList.remove("active")
+})
 
 // Agregar al carrito
 const agregarAlCarrito = (camiId) => {
@@ -225,18 +96,6 @@ const alertaAgregarAlCarrito = () => {
     })
 }
 
-// Eliminar productos del carrito
-const eliminarDelCarrito = (camiId) => {
-    const item = carrito.find((cami) => cami.id === camiId)
-    const i = carrito.indexOf(item)
-    carrito.splice(i, 1)
-
-    // Actualizar LocalStorage
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    
-    actualizarCarrito()
-}
-
 // HTML del Carrito - Actualizar Carrito
 const actualizarCarrito = () => {
     carritoContainer.innerHTML = ""
@@ -245,9 +104,9 @@ const actualizarCarrito = () => {
         const div = document.createElement("div")
         div.className = ("cart__product")
         div.innerHTML = `
-                        <p>${prod.nombre}</p>
-                        <p>Precio: $${prod.precio}</p>
-                        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+                        <p class="cart__product-data">${prod.nombre}</p>
+                        <p class="cart__product-data">Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+                        <p class="cart__product-data">Precio: $${prod.precio}</p>
                         <button onclick="eliminarDelCarrito(${prod.id})" class="cart__product-delete"><i class="fa-solid fa-trash"></i></button>
                         `
         carritoContainer.appendChild(div)
@@ -261,14 +120,121 @@ const actualizarCarrito = () => {
 
     // Actualizar precio total
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0) 
-
 }
 
+// Local Storage
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("carrito")) {
+        carrito = JSON.parse(localStorage.getItem("carrito"))
+        actualizarCarrito()
+    }
+})
 
+// Finalizar Compra
+btnFinalizarCompra.addEventListener("click", () => {
+    Swal.fire({
+        title: '¿Está seguro que desea finalizar la compra?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#072e51',
+        cancelButtonColor: '#A52502',
+        confirmButtonText: 'Finalizar',
+        cancelButtonText: "Cancelar",
+        background: "rgb(230, 230, 230)",
+        color: "rgb(7,46,81)",
+        iconColor: "rgb(117,170,219)"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            if (carrito.length != 0) {
+                carrito.length = 0
+                carritoContainer.innerHTML = loading()
+                setTimeout(() => {
+                    alertaCompra()
+                    actualizarCarrito()
+                }, 3000);
 
+                // Limpiar LocalStorage
+                localStorage.removeItem("carrito")
+            } else{
+                alertErrorCompra()
+            }
+        }
+    })
+}) 
 
+// Sweet Alert -> Finalizar Compra
+const alertaCompra = () => {
+    Swal.fire({
+        title: 'Golazo!',
+        text: 'Su compra fue realizada con éxito.',
+        imageUrl: 'img/diegol.gif',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Maradona gritando gol',
+        confirmButtonText: "Volver",
+        confirmButtonColor: "#072e51",
+        background: "rgb(230, 230, 230)",
+        color: "rgb(7,46,81)"
+    })
+}
 
+// Sweet Alert -> Error al finalizar Compra
+const alertErrorCompra = () => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No tiene productos cargados en el carrito',
+        confirmButtonText: "Volver",
+        confirmButtonColor: "#072e51",
+        background: "rgb(230, 230, 230)",
+        color: "rgb(7,46,81)",
+        iconColor: "red"
+      })
+}
 
+// Vaciar Carrito
+btnVaciarCarrito.addEventListener("click", () => {
+    alertaVaciar()
+})  
 
+// Sweet Alert -> Vaciar Carrito
+const alertaVaciar = () => {
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: "Se perderan los productos guardados en el carrito.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#072e51',
+        cancelButtonColor: '#A52502',
+        confirmButtonText: 'Vaciar',
+        cancelButtonText: "Cancelar",
+        background: "rgb(230, 230, 230)",
+        color: "rgb(7,46,81)",
+        iconColor: "red"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            carrito.length = 0
+            actualizarCarrito()
+            
+            // Limpiar Loca-borderlStorage
+            localStorage.removeItem("carrito")
+        }
+    })
+}
 
+// Eliminar productos del carrito
+const eliminarDelCarrito = (camiId) => {
+    const item = carrito.find((cami) => cami.id === camiId)
+    const i = carrito.indexOf(item)
+    carrito.splice(i, 1)
 
+    // Actualizar LocalStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    
+    actualizarCarrito()
+}
+
+// Loader
+const loading = () => {
+    return `<span class="loader"></span>`
+}

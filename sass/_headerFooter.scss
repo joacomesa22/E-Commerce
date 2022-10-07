@@ -35,7 +35,7 @@ header{
                 background: $lightBlue;
                 width: 100%;
                 margin-top: 3px;
-                height: 3px;
+                height: 2px;
                 clip-path: var(--clippy);
                 transition: clip-path .3s;
             }
@@ -62,80 +62,6 @@ header{
         }
     }
 }
-
-// Carrito
-.cart.active{
-    right: 0;
-}
-
-.cart{
-    position: fixed;
-    right: -100%;
-    top: 16.3%;
-    height: 400px;
-    width: 600px;
-    border: 2px solid $lightBlue;
-    background: $white;
-    z-index: 999;
-    transition: all .5s;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    &__botones{
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-
-        &-vaciar{
-            background: $gradient;
-            color: $white;
-            border: 2px solid $lightBlue;
-            padding: 4px 8px;
-            cursor: pointer;
-        }
-
-        &-comprar{
-            background: $gradient;
-            color: $white;
-            border: 2px solid $lightBlue;
-            padding: 4px 8px;
-            cursor: pointer;
-        }
-        
-        &-total{
-            background: $gradient;
-            color: $white;
-            border: 2px solid $lightBlue;
-            padding: 4px 8px;
-            display: inline;
-        }
-        
-    }
-
-    &__product{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 2.4rem;
-        font-size: 0.8rem;
-        color: $gradient;
-        align-items: center;
-        
-        &-delete{
-            border: none;
-            background: $gradient;
-            color: $white;
-            border: 2px solid $lightBlue;
-            padding: 5px 5px;
-            cursor: pointer;
-        }
-    }
-}
-
-
-
 
 .footer{
     display: flex;
@@ -169,7 +95,7 @@ header{
                 background: $lightBlue;
                 width: 100%;
                 margin-top: 3px;
-                height: 3px;
+                height: 2px;
                 clip-path: var(--clippy);
                 transition: clip-path .3s;
             }
