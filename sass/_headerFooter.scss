@@ -106,9 +106,9 @@ header{
 
     }
     &__media{
-        width: 15%;
         display: flex;
         justify-content: space-around;
+        gap: 1.5rem;
         i{
             font-size: 2rem;
             color: $white;

@@ -27,13 +27,13 @@
     &__img img{
         width: 100%;
         border-radius: 8px;
-        border: 2px solid $lightBlue;
     }
 
     &__button{
         display: flex;
         justify-content: center;
         margin-top: 1rem;
+        
         button{
             color: $gradient;
             font-size: 1.1rem;
@@ -74,7 +74,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    overflow: hidden;
 
     &__close{
         position: absolute;
@@ -106,6 +105,7 @@
         padding: 0.5rem 0;
         border-bottom: 2px solid rgba(0,0,0,0.1);
         flex-wrap: wrap;
+        overflow: hidden;
 
         &-data{
             font-size: 0.8rem;
@@ -130,7 +130,7 @@
     
     &__buttons{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
         
         &-vaciar{

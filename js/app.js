@@ -1,4 +1,4 @@
-// Carga de las cards (HTML) de las camisetas
+ // Carga de las cards (HTML) de las camisetas
 const URL = "../bbdd/stock.json"
 const cargarCards = async () => {
     try {
