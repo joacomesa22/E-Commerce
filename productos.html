@@ -1,68 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>D10S - Productos</title>
-</head>
-<body>
-    <header>
-        <div class="header">
-            <div class="header__logo">
-                <a href="index.html"><img src="./img/logo-solo.png" alt=""></a>
-            </div>
-            <nav class="header__links">
-                <a href="productos.html" class="header__links-link">Catálogo</a>
-                <button id="abrir-carrito" class="header__links-cart"><i class="fa-solid fa-cart-shopping header__links-cart-icon"></i><span id="contador-carrito" class="header__links-cart-contador">0</span></button>
-            </nav>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <a href="index.html"><img src="./img/logo-solo.png" alt="" /></a>
+      </div>
+      <nav class="header__links">
+        <a href="productos.html" class="header__links-link">Catálogo</a>
+        <button id="abrir-carrito" class="header__links-cart">
+          <i class="fa-solid fa-cart-shopping header__links-cart-icon"></i
+          ><span id="contador-carrito" class="header__links-cart-contador"
+            >0</span
+          >
+        </button>
+      </nav>
+      <div class="cart">
+        <i class="fa-solid fa-x cart__close" id="close-cart"></i>
+
+        <h1 class="cart__title">Carrito</h1>
+
+        <div id="cart-id" class="cart-productos"></div>
+
+        <div class="cart__buttons">
+          <button id="vaciar-carrito" class="cart__buttons-vaciar">
+            Vaciar Carrito
+          </button>
+
+          <p class="cart__buttons-total">
+            Total: $<span id="precio-total">0</span>
+          </p>
         </div>
-        <div class="cart">
-            <i class="fa-solid fa-x cart__close" id="close-cart"></i>
 
-            <h1 class="cart__title">Carrito</h1>
-
-            <div id="cart-id" class="cart-productos">
-
-            </div>
-            
-            <div class="cart__buttons">
-                <button id="vaciar-carrito" class="cart__buttons-vaciar">Vaciar Carrito</button>
-
-                <p class="cart__buttons-total">Total: $<span id="precio-total">0</span></p>
-            </div>
-
-            <button id="comprar-carrito" class="cart__comprar">Finalizar Compra</button>
-        </div>
+        <button id="comprar-carrito" class="cart__comprar">
+          Finalizar Compra
+        </button>
+      </div>
     </header>
     <main>
-        <div class="cards-container" id="container">
-            
-        </div>
+      <div class="wrapper">
+        <div class="cards-container" id="container"></div>
+      </div>
     </main>
     <footer>
-        <div class="footer">
-            <div class="footer__logo">
-                <a href="index.html"><img src="./img/logo-solo.png" alt=""></a>
-            </div>
-            <div class="footer__links">
-                <a href="productos.html" class="footer__links-link">Catálogo</a>
-            </div>
-            <div class="footer__media">
-                <a href="" class="footer__media-icon"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="" class="footer__media-icon"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="" class="footer__media-icon"><i class="fa-brands fa-square-twitter"></i></a>
-                <a href="" class="footer__media-icon"><i class="fa-brands fa-tiktok"></i></a>
-            </div>
+      <div class="footer">
+        <div class="footer__logo">
+          <a href="index.html"><img src="./img/logo-solo.png" alt="" /></a>
         </div>
+        <div class="footer__media">
+          <a href="" class="footer__media-icon"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a href="" class="footer__media-icon"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a href="" class="footer__media-icon"
+            ><i class="fa-brands fa-square-twitter"></i
+          ></a>
+        </div>
+      </div>
     </footer>
-    <script  src="js/dom.js"></script>
-    <script  defer src="js/app.js"></script>
+    <script src="js/dom.js"></script>
+    <script defer src="js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+  </body>
 </html>

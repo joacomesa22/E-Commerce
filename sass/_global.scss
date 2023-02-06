@@ -1,15 +1,24 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  color: var(--white);
+  background: var(--gradient);
+  font-size: 16px;
+  font-family: var(--fontFam);
+}
 
-}
-html{
-    scroll-behavior: smooth;
-}
-body{
-    background: $gradient;
+// Wrapper
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer--lg);
+  margin: var(--spacer--lg);
 }

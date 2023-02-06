@@ -1,86 +1,60 @@
 // HERO
-.hero{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    align-items: center;
-    @include centrado;
-    padding: 4rem 2rem;
+.hero {
+  display: flex;
+  gap: var(--spacer--md);
+  align-items: center;
+  justify-content: center;
 
-    &__img{
-        width: 100%;
-        justify-self: left;
-        img{
-            width: 100%;
-        }
-    }
-    &__texto{
-        justify-self: right;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+  &__texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacer--sm);
+    max-width: 500px;
+  }
 
-        h1{
-            font-size: 3.5rem;
-            color: $white;
-        }
-        a{
-            color: $darkBlue;
-            font-size: 1.2rem;
-            padding: 8px 24px;
-            background: $lightBlue;
-            border-radius: 10px;
-            transition: all .3s;
-            border: 2px solid $lightBlue;
-            &:hover{
-                background: $gradient;
-                color: $lightBlue;
-                border: 2px solid $lightBlue;
-            }
-        }
+  &__img {
+    max-width: 500px;
+    img {
+      width: 100%;
     }
+  }
+}
+
+// Botones
+.btn-catalogo {
+  padding: 4px 6px;
+  background: var(--lightBlue);
+  border-radius: 6px;
+  transition: all 0.3s;
+  border: 2px solid var(--lightBlue);
+  width: max-content;
+  &:hover {
+    background: var(--gradient);
+    color: var(--lightBlue);
+    border: 2px solid var(--lightBlue);
+  }
 }
 
 // CAMISETAS
-.camisetas{
-    @include centrado;
+.camisetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacer--sm);
+  text-align: center;
+
+  &__img {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 4rem 2rem;
-    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacer--md);
 
-    h1{
-        font-size: 3rem;
-        color: $white;
-        margin-bottom: 2.5rem;
+    img {
+      border-radius: 8px;
+      border: 2px solid var(--lightBlue);
+      max-width: 260px;
     }
-
-    &__img{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-
-        img{
-            border-radius: 8px;
-            border: 2px solid $lightBlue;
-            width: 100%
-        }
-    }
-    a{
-        margin-top: 2rem;
-        color: $darkBlue;
-        font-size: 1.2rem;
-        padding: 8px 24px;
-        background: $lightBlue;
-        border-radius: 10px;   
-        transition: all .3s;
-        border: 2px solid $lightBlue;   
-        &:hover{
-            background: $gradient;
-            color: $lightBlue;
-            border: 2px solid $lightBlue;
-        }
-    }
+  }
 }

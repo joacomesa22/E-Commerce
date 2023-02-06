@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>D10S - Inicio</title>
-</head>
-<body>
-    <header>
-        <div class="header">
-            <div class="header__logo">
-                <a href="index.html"><img src="./img/logo-solo.png" alt=""></a>
-            </div>
-            <nav class="header__links">
-                <a href="productos.html" class="header__links-link">Catálogo</a>
-            </nav>
-        </div>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo">
+        <a href="index.html"><img src="./img/logo-solo.png" alt="" /></a>
+      </div>
+      <nav class="header__links">
+        <a href="productos.html" class="header__links-link">Catálogo</a>
+      </nav>
     </header>
     <main>
+      <div class="wrapper">
         <section class="hero">
-            <div class="hero__texto">
-                <h1>Las mejores camisetas del deporte mas hermoso</h1>
-                <a href="./productos.html">Ver Catálogo</a>
-            </div>
-            <div class="hero__img">
-                <img src="./img/diego.png" alt="logo">
-            </div>
+          <div class="hero__texto">
+            <h1>Las mejores camisetas del deporte mas hermoso</h1>
+            <a href="./productos.html" class="btn-catalogo">Ver Catálogo</a>
+          </div>
+          <div class="hero__img">
+            <img src="./img/diego.png" alt="logo" />
+          </div>
         </section>
         <section class="camisetas">
-            <h1>La calidad ante todo</h1>
-            <div class="camisetas__img">
-                <img src="./img/chelsea.jpeg" alt="camiseta chelsea">
-                <img src="./img/river.jpeg" alt="camiseta river">
-                <img src="./img/liverpool.jpeg" alt="camiseta liverpool">
-            </div>
-            <a href="./productos.html">Ver Catálogo</a>   
+          <h2>La calidad ante todo</h2>
+          <div class="camisetas__img">
+            <img src="./img/chelsea.jpeg" alt="camiseta chelsea" />
+            <img src="./img/river.jpeg" alt="camiseta river" />
+            <img src="./img/liverpool.jpeg" alt="camiseta liverpool" />
+          </div>
+          <a href="./productos.html" class="btn-catalogo">Ver Catálogo</a>
         </section>
+      </div>
     </main>
     <footer class="footer">
-        <div class="footer__logo">
-            <a href="index.html"><img src="./img/logo-solo.png" alt=""></a>
-        </div>
-        <div class="footer__links">
-            <a href="productos.html" class="footer__links-link">Catálogo</a>
-        </div> 
-        <div class="footer__media">
-            <a href="" class="footer__media-icon"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="" class="footer__media-icon"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="" class="footer__media-icon"><i class="fa-brands fa-square-twitter"></i></a>
-            <a href="" class="footer__media-icon"><i class="fa-brands fa-tiktok"></i></a>
-        </div>
+      <div class="footer__logo">
+        <a href="index.html"><img src="./img/logo-solo.png" alt="" /></a>
+      </div>
+      <div class="footer__media">
+        <a href="" class="footer__media-icon"
+          ><i class="fa-brands fa-square-instagram"></i
+        ></a>
+        <a href="" class="footer__media-icon"
+          ><i class="fa-brands fa-square-facebook"></i
+        ></a>
+        <a href="" class="footer__media-icon"
+          ><i class="fa-brands fa-square-twitter"></i
+        ></a>
+      </div>
     </footer>
-    <script  defer src="js/dom.js"></script>
-    <script  defer src="js/app.js"></script>
+    <script defer src="js/dom.js"></script>
+    <script defer src="js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+  </body>
 </html>

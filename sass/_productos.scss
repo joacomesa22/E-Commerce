@@ -1,230 +1,211 @@
-.cards-container{
-    @include centrado;
-    padding: 6rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    gap: 5rem;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacer--md);
+  align-self: center;
+  width: 100%;
 }
-.card{
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid var(--lightBlue);
+  padding: calc(var(--spacer--sm) / 2);
+  border-radius: 6px;
+  gap: 10px;
+
+  &__img {
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+  &__text {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
 
-    &__text{
-        display: flex;
-        justify-content: space-between;
-        color: $white;
-
-        p:first-of-type{
-            width: 80%;
-        }
-        p{
-            font-size: 0.9rem;
-        }
+    p {
+      font-size: 0.9rem;
     }
+  }
 
-    &__img img{
-        width: 100%;
-        border-radius: 8px;
+  button {
+    color: var(--darkBlue);
+    font-size: var(--fontS);
+    padding: 8px 16px;
+    background: var(--lightBlue);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid var(--lightBlue);
+    transition: all 0.3s;
+    &:hover {
+      background: var(--gradient);
+      color: var(--lightBlue);
+      border: 2px solid var(--lightBlue);
     }
-
-    &__button{
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
-        
-        button{
-            color: $gradient;
-            font-size: 1.1rem;
-            padding: 8px 16px;
-            background: $lightBlue;
-            border-radius: 10px;
-            position: absolute;
-            border: none;
-            cursor: pointer;
-            transition: all .3s;
-            &:hover{
-                background: $gradient;
-                color: $lightBlue;
-                border: 2px solid $lightBlue;
-                transform: scale(1.1)
-            }
-        }
-    }
+  }
 }
 
 // Carrito
-.cart.active{
-    left: 0;
+.cart.active {
+  left: 0;
 }
 
-.cart{
-    position: fixed;
-    left: -400%;
-    top: 0;
-    min-height: 100vh;
-    width: 50%;
-    border: 2px solid $lightBlue;
-    background: $white;
-    z-index: 999;
-    transition: all .5s;
-    padding: 1.2rem;
+.cart {
+  position: fixed;
+  left: -400%;
+  top: 0;
+  min-height: 100vh;
+  width: 50%;
+  border: 2px solid var(--lightBlue);
+  background: var(--white);
+  z-index: 999;
+  transition: all 0.5s;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacer--sm);
+
+  &__close {
+    position: absolute;
+    font-size: var(--fontS);
+    right: 1.2rem;
+    top: 1.2rem;
+    cursor: pointer;
+    transition: all 0.1s;
+    color: #000;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    color: #000;
+  }
+
+  &__product {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacer--sm);
+    color: #000;
     align-items: center;
-    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 
-    &__close{
-        position: absolute;
-        font-size: 1.4rem;
-        right: 1.2rem;
-        top: 1.2rem;
-        cursor: pointer;
-        transition: all .1s;
-        color: #000;
-
-        &:hover{
-            transform: scale(1.1);
-        }
+    &-data {
+      font-size: 0.8rem;
+      width: 20%;
     }
 
-    &__title{
-        color: #000;
-    }
+    &-delete {
+      border: none;
+      background: transparent;
+      color: #bd2a2e;
+      padding: 5px 5px;
+      cursor: pointer;
+      font-size: var(--fontS);
+      transition: all 0.2s;
 
-    &__product{
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    &-vaciar {
+      color: var(--lightBlue);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: var(--fontS);
+      font-weight: 600;
+      --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      &::after {
+        content: "";
+        display: block;
+        background: var(--lightBlue);
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 2.4rem;
-        font-size: 0.8rem;
-        color: #000;
-        align-items: center;
-        margin: 0.5rem 0;
-        padding: 0.5rem 0;
-        border-bottom: 2px solid rgba(0,0,0,0.1);
-        flex-wrap: wrap;
-        overflow: hidden;
-
-        &-data{
-            font-size: 0.8rem;
-            width: 20%;
-        }
-        
-        &-delete{
-            border: none;
-            background: transparent;
-            color: #BD2A2E;
-            padding: 5px 5px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all .2s;
-
-            &:hover{
-                transform: scale(1.1);
-            }
-        }
+        margin-top: 3px;
+        height: 2px;
+        clip-path: var(--clippy);
+        transition: clip-path 0.3s;
+      }
+      &:hover {
+        --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+      }
     }
-
-    
-    &__buttons{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        
-        &-vaciar{
-            color: $lightBlue;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: all .3s;
-            font-size: 1rem;
-            font-weight: 500;
-            --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
-            &::after{
-                content: "";
-                display: block;
-                background: $lightBlue;
-                width: 100%;
-                margin-top: 3px;
-                height: 2px;
-                clip-path: var(--clippy);
-                transition: clip-path .3s;
-            }
-            &:hover{
-                --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
-            }
-        }  
-        &-total{
-            color: #000;
-        }
-    
+    &-total {
+      color: #000000;
     }
-    
-    &__comprar{
-        background: $lightBlue;
-        color: $darkBlue;
-        border: 2px solid $lightBlue;
-        border: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all .3s;
-        font-weight: 500;
-        &:hover{
-            background: $gradient;
-            color: $white;
-            border: 2px solid $lightBlue;
-            transform: scale(1.1)
-        }
-    } 
-}
+  }
 
-.cart-productos{
-   padding-bottom:  0.4rem;
+  &__comprar {
+    background: var(--lightBlue);
+    color: var(--darkBlue);
+    border: 2px solid var(--lightBlue);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    border: 2px solid var(--lightBlue);
+    &:hover {
+      background: var(--gradient);
+      color: var(--white);
+      border: 2px solid var(--lightBlue);
+    }
+  }
 }
 
 // Loader
 .loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: $lightBlue;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin: 2rem;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: var(--lightBlue);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: 2rem;
 }
 
 @keyframes rotation {
-    0% {
+  0% {
     transform: rotate(0deg);
-    }
-    100% {
+  }
+  100% {
     transform: rotate(360deg);
-    }
+  }
 }
 
 // Error
 .error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #BD2A2E;
-    padding: 1rem;
-    grid-column: 2;
-    border: 2px solid $lightBlue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bd2a2e;
+  padding: var(--spacer--sm);
+  border: 2px solid var(--lightBlue);
 
-    &__img {
-        img{
-            width: 100%;
-            border: 2px solid $lightBlue;
-        }
+  &__img {
+    img {
+      width: 100%;
+      border: 2px solid var(--lightBlue);
     }
-
-    &__text{
-        text-align: center;
-    }
+  }
 }
