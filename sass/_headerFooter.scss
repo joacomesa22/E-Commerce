@@ -25,7 +25,6 @@
     &-link {
       color: var(--white);
       font-size: var(--fontM);
-      --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
       &::after {
         content: "";
         display: block;
@@ -83,7 +82,7 @@
     justify-content: space-around;
     gap: var(--spacer--sm);
     i {
-      font-size: var(--fontL);
+      font-size: var(--fontM);
       color: var(--white);
       transition: all 0.3s;
       &:hover {
