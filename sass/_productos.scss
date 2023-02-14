@@ -133,19 +133,8 @@
       transition: var(--transition);
       font-size: var(--fontS);
       font-weight: 600;
-      --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
-      &::after {
-        content: "";
-        display: block;
-        background: var(--lightBlue);
-        width: 100%;
-        margin-top: 3px;
-        height: 2px;
-        clip-path: var(--clippy);
-        transition: var(--transition);
-      }
       &:hover {
-        --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+        transform: scale(1.06);
       }
     }
     &-total {
