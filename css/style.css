@@ -11,7 +11,9 @@
   --lightBlue: rgb(117, 170, 219);
   --gradient: radial-gradient(rgb(7, 46, 81), #101020);
   --darkBlue: rgb(7, 46, 81);
-  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%); }
+  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  --border: 2px solid var(--lightBlue);
+  --transition: all 0.3s; }
 
 h1 {
   font-size: var(--fontXXL);
@@ -53,10 +55,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: calc(var(--spacer--md) - var(--spacer--sm));
-  border-bottom: 2px solid var(--lightBlue); }
+  border-bottom: var(--border); }
   .header__logo {
     max-width: 180px;
-    transition: all 0.3s; }
+    transition: var(--transition); }
     .header__logo img {
       width: 100%; }
     .header__logo:hover {
@@ -77,7 +79,7 @@ body {
         margin-top: 3px;
         height: 2px;
         clip-path: var(--clippy);
-        transition: clip-path 0.3s; }
+        transition: var(--transition); }
       .header__links-link:hover {
         --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%); }
     .header__links-cart {
@@ -87,7 +89,7 @@ body {
       .header__links-cart-icon {
         color: var(--white);
         font-size: var(--fontM);
-        transition: all 0.3s; }
+        transition: var(--transition); }
         .header__links-cart-icon:hover {
           transform: scale(1.1); }
       .header__links-cart-contador {
@@ -99,10 +101,10 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: var(--spacer--md);
-  border-top: 2px solid var(--lightBlue); }
+  border-top: var(--border); }
   .footer__logo {
     max-width: 180px;
-    transition: all 0.3s; }
+    transition: var(--transition); }
     .footer__logo:hover {
       transform: scale(1.02); }
     .footer__logo img {
@@ -114,7 +116,7 @@ body {
     .footer__media i {
       font-size: var(--fontM);
       color: var(--white);
-      transition: all 0.3s; }
+      transition: var(--transition); }
       .footer__media i:hover {
         transform: scale(1.02); }
 
@@ -138,13 +140,13 @@ body {
   padding: 4px 6px;
   background: var(--lightBlue);
   border-radius: 6px;
-  transition: all 0.3s;
-  border: 2px solid var(--lightBlue);
+  transition: var(--transition);
+  border: var(--border);
   width: max-content; }
   .btn-catalogo:hover {
     background: var(--gradient);
     color: var(--lightBlue);
-    border: 2px solid var(--lightBlue); }
+    border: var(--border); }
 
 .camisetas {
   display: flex;
@@ -160,7 +162,7 @@ body {
     gap: var(--spacer--md); }
     .camisetas__img img {
       border-radius: 8px;
-      border: 2px solid var(--lightBlue);
+      border: var(--border);
       max-width: 260px; }
 
 .cards-container {
@@ -169,39 +171,38 @@ body {
   gap: var(--spacer--md);
   align-self: center;
   width: 100%; }
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid var(--lightBlue);
-  padding: calc(var(--spacer--sm) / 2);
-  border-radius: 8px;
-  gap: 10px; }
-  .card__img img {
-    width: 100%;
-    border-radius: 8px; }
-  .card__text {
+  .cards-container .card {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    border: var(--border);
+    padding: calc(var(--spacer--sm) / 2);
+    border-radius: 8px;
     gap: 10px; }
-    .card__text p {
-      font-size: 0.9rem; }
-  .card button {
-    color: var(--darkBlue);
-    font-size: var(--fontS);
-    padding: 8px 16px;
-    background: var(--lightBlue);
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    border: 2px solid var(--lightBlue);
-    transition: all 0.3s; }
-    .card button:hover {
-      background: var(--gradient);
-      color: var(--lightBlue);
-      border: 2px solid var(--lightBlue); }
+    .cards-container .card__img img {
+      width: 100%;
+      border-radius: 8px; }
+    .cards-container .card__text {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px; }
+      .cards-container .card__text p {
+        font-size: 0.9rem; }
+    .cards-container .card button {
+      color: var(--darkBlue);
+      font-size: var(--fontS);
+      padding: 8px 16px;
+      background: var(--lightBlue);
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      border: 2px solid var(--lightBlue);
+      transition: var(--transition); }
+      .cards-container .card button:hover {
+        background: var(--gradient);
+        color: var(--lightBlue);
+        border: var(--border); }
 
 .cart.active {
   left: 0; }
@@ -212,10 +213,10 @@ body {
   top: 0;
   min-height: 100vh;
   width: 50%;
-  border: 2px solid var(--lightBlue);
+  border: var(--border);
   background: var(--white);
   z-index: 999;
-  transition: all 0.5s;
+  transition: var(--transition);
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -253,7 +254,7 @@ body {
       padding: 5px 5px;
       cursor: pointer;
       font-size: var(--fontS);
-      transition: all 0.2s; }
+      transition: all 0.1s; }
       .cart__product-delete:hover {
         transform: scale(1.1); }
   .cart__buttons {
@@ -265,7 +266,7 @@ body {
       background: transparent;
       border: none;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: var(--transition);
       font-size: var(--fontS);
       font-weight: 600;
       --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%); }
@@ -277,7 +278,7 @@ body {
         margin-top: 3px;
         height: 2px;
         clip-path: var(--clippy);
-        transition: clip-path 0.3s; }
+        transition: var(--transition); }
       .cart__buttons-vaciar:hover {
         --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%); }
     .cart__buttons-total {
@@ -285,18 +286,17 @@ body {
   .cart__comprar {
     background: var(--lightBlue);
     color: var(--darkBlue);
-    border: 2px solid var(--lightBlue);
-    border: none;
+    border: var(--border);
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition);
     font-weight: 600;
-    border: 2px solid var(--lightBlue); }
+    border: var(--border); }
     .cart__comprar:hover {
       background: var(--gradient);
       color: var(--white);
-      border: 2px solid var(--lightBlue); }
+      border: var(--border); }
 
 .loader {
   width: 48px;
@@ -321,10 +321,10 @@ body {
   align-items: center;
   background-color: #bd2a2e;
   padding: var(--spacer--sm);
-  border: 2px solid var(--lightBlue); }
+  border: var(--border); }
   .error__img img {
     width: 100%;
-    border: 2px solid var(--lightBlue); }
+    border: var(--border); }
 
 @media screen and (max-width: 768px) {
   .header {

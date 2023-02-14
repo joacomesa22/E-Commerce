@@ -1,4 +1,4 @@
-// HERO
+// Hero
 .hero {
   display: flex;
   gap: var(--spacer--md);
@@ -26,13 +26,13 @@
   padding: 4px 6px;
   background: var(--lightBlue);
   border-radius: 6px;
-  transition: all 0.3s;
-  border: 2px solid var(--lightBlue);
+  transition: var(--transition);
+  border: var(--border);
   width: max-content;
   &:hover {
     background: var(--gradient);
     color: var(--lightBlue);
-    border: 2px solid var(--lightBlue);
+    border: var(--border);
   }
 }
 
@@ -53,7 +53,7 @@
 
     img {
       border-radius: 8px;
-      border: 2px solid var(--lightBlue);
+      border: var(--border);
       max-width: 260px;
     }
   }

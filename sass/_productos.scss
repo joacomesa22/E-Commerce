@@ -1,50 +1,52 @@
+// Cards Productos
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacer--md);
   align-self: center;
   width: 100%;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid var(--lightBlue);
-  padding: calc(var(--spacer--sm) / 2);
-  border-radius: 8px;
-  gap: 10px;
 
-  &__img {
-    img {
-      width: 100%;
-      border-radius: 8px;
-    }
-  }
-  &__text {
+  .card {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    border: var(--border);
+    padding: calc(var(--spacer--sm) / 2);
+    border-radius: 8px;
     gap: 10px;
 
-    p {
-      font-size: 0.9rem;
+    &__img {
+      img {
+        width: 100%;
+        border-radius: 8px;
+      }
     }
-  }
+    &__text {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
 
-  button {
-    color: var(--darkBlue);
-    font-size: var(--fontS);
-    padding: 8px 16px;
-    background: var(--lightBlue);
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    border: 2px solid var(--lightBlue);
-    transition: all 0.3s;
-    &:hover {
-      background: var(--gradient);
-      color: var(--lightBlue);
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    button {
+      color: var(--darkBlue);
+      font-size: var(--fontS);
+      padding: 8px 16px;
+      background: var(--lightBlue);
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
       border: 2px solid var(--lightBlue);
+      transition: var(--transition);
+      &:hover {
+        background: var(--gradient);
+        color: var(--lightBlue);
+        border: var(--border);
+      }
     }
   }
 }
@@ -53,17 +55,16 @@
 .cart.active {
   left: 0;
 }
-
 .cart {
   position: fixed;
   left: -400%;
   top: 0;
   min-height: 100vh;
   width: 50%;
-  border: 2px solid var(--lightBlue);
+  border: var(--border);
   background: var(--white);
   z-index: 999;
-  transition: all 0.5s;
+  transition: var(--transition);
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -111,7 +112,7 @@
       padding: 5px 5px;
       cursor: pointer;
       font-size: var(--fontS);
-      transition: all 0.2s;
+      transition: all 0.1s;
 
       &:hover {
         transform: scale(1.1);
@@ -129,7 +130,7 @@
       background: transparent;
       border: none;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: var(--transition);
       font-size: var(--fontS);
       font-weight: 600;
       --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -141,7 +142,7 @@
         margin-top: 3px;
         height: 2px;
         clip-path: var(--clippy);
-        transition: clip-path 0.3s;
+        transition: var(--transition);
       }
       &:hover {
         --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
@@ -155,18 +156,17 @@
   &__comprar {
     background: var(--lightBlue);
     color: var(--darkBlue);
-    border: 2px solid var(--lightBlue);
-    border: none;
+    border: var(--border);
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition);
     font-weight: 600;
-    border: 2px solid var(--lightBlue);
+    border: var(--border);
     &:hover {
       background: var(--gradient);
       color: var(--white);
-      border: 2px solid var(--lightBlue);
+      border: var(--border);
     }
   }
 }
@@ -200,12 +200,12 @@
   align-items: center;
   background-color: #bd2a2e;
   padding: var(--spacer--sm);
-  border: 2px solid var(--lightBlue);
+  border: var(--border);
 
   &__img {
     img {
       width: 100%;
-      border: 2px solid var(--lightBlue);
+      border: var(--border);
     }
   }
 }

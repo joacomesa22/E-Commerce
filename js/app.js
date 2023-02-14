@@ -59,7 +59,6 @@ const agregarAlCarrito = (camiId) => {
 
   if (existe) {
     carrito.map((cami) => {
-      // Operador Lógico AND
       cami.id === camiId && cami.cantidad++;
     });
   } else {
@@ -219,7 +218,7 @@ const alertaVaciar = () => {
       carrito.length = 0;
       actualizarCarrito();
 
-      // Limpiar Loca-borderlStorage
+      // Limpiar LocalStorage
       localStorage.removeItem("carrito");
     }
   });

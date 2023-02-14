@@ -1,9 +1,11 @@
 @media screen and (max-width: 768px) {
-  // Index
+  // Header
   .header {
     flex-direction: column;
     gap: var(--spacer--sm);
   }
+
+  // Index
   .hero {
     flex-wrap: wrap-reverse;
     &__texto {

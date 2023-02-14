@@ -1,13 +1,14 @@
+// Header
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: calc(var(--spacer--md) - var(--spacer--sm));
-  border-bottom: 2px solid var(--lightBlue);
+  border-bottom: var(--border);
 
   &__logo {
     max-width: 180px;
-    transition: all 0.3s;
+    transition: var(--transition);
     img {
       width: 100%;
     }
@@ -33,7 +34,7 @@
         margin-top: 3px;
         height: 2px;
         clip-path: var(--clippy);
-        transition: clip-path 0.3s;
+        transition: var(--transition);
       }
       &:hover {
         --clippy: polygon(0 0, 100% 0, 100% 99%, 0 100%);
@@ -47,7 +48,7 @@
       &-icon {
         color: var(--white);
         font-size: var(--fontM);
-        transition: all 0.3s;
+        transition: var(--transition);
         &:hover {
           transform: scale(1.1);
         }
@@ -60,15 +61,16 @@
   }
 }
 
+// Footer
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: var(--spacer--md);
-  border-top: 2px solid var(--lightBlue);
+  border-top: var(--border);
   &__logo {
     max-width: 180px;
-    transition: all 0.3s;
+    transition: var(--transition);
     &:hover {
       transform: scale(1.02);
     }
@@ -84,7 +86,7 @@
     i {
       font-size: var(--fontM);
       color: var(--white);
-      transition: all 0.3s;
+      transition: var(--transition);
       &:hover {
         transform: scale(1.02);
       }
